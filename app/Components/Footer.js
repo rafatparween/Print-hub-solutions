@@ -93,7 +93,7 @@ const Footer = () => {
             </h3>
             <div className="space-y-3">
               <p className="flex items-center">
-                <span className="mr-2">📞</span> +(1) 888-291-3869
+                <span className="mr-2">📞</span> +(1) 808-468-1018
               </p>
               <p className="flex items-center">
                 <span className="mr-2">📍</span> Los Angeles, California United States
