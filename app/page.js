@@ -7,6 +7,7 @@ import SliderPage from "./Components/SliderPage";
 import Digonode from "./Components/Digonode";
 import Footer from "./Components/Footer";
 import PrinterSetupGuide from "./Components/PrinterSetupGuide";
+import JivoChat from "./JivoChat";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
   <Digonode/>
   <PrinterSetupGuide/>
   <Footer/>
+  <JivoChat/>
       {/* <Contents/> */}
       
       {/* <Footer/> */}
