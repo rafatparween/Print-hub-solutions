@@ -14,9 +14,9 @@ const Footer = () => {
         <div className="mb-8 pb-4 border-b border-teal-700">
           <Link href="/" className="inline-block">
             <h2 className="text-[36px] font-bold text-white">
-              <span className="text-white">Micro</span> 
-              <span className="text-white"> Hub </span>
-              <span className="text-white">Care</span>
+              <span className="text-white">Print Hub Solutions</span> 
+              {/* <span className="text-white"> Hub </span>
+              <span className="text-white">Care</span> */}
             </h2>
             <p className="text-[#1C8DCEED] text-sm mt-1">Premium Technical Solutions</p>
           </Link>
@@ -93,7 +93,7 @@ const Footer = () => {
             </h3>
             <div className="space-y-3">
               <p className="flex items-center">
-                <span className="mr-2">📞</span> +(1) 808-468-1018
+                <span className="mr-2">📞</span> (866) 866-6257
               </p>
               <p className="flex items-center">
                 <span className="mr-2">📍</span> Los Angeles, California United States

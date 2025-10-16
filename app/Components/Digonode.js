@@ -114,10 +114,10 @@ export default function Digonode() {
           
           <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 animate-gradient-x">
-            Advanced Printer Solutions 
+           Which printer question 
             </span>
             <br />
-            <span className="text-white">Diagnostics Hub</span>
+            <span className="text-white">can we help you with?</span>
           </h1>
           
           <motion.p
@@ -126,7 +126,7 @@ export default function Digonode() {
             transition={{ delay: 0.4 }}
             className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed"
           >
-            Next-generation solutions powered by AI diagnostics and real-time troubleshooting
+           
           </motion.p>
         </motion.div>
 
