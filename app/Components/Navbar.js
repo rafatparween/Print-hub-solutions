@@ -160,6 +160,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { FaSearch, FaShoppingCart, FaBars, FaTimes } from "react-icons/fa";
+import Link from "next/link";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -178,15 +179,15 @@ export default function Navbar() {
 
         {/* Desktop Nav Links */}
         <div className="hidden md:flex space-x-12 text-[#767676] font-semibold text-base text-[20px]">
-          <a href="#" className="hover:text-black transition-colors duration-200">
+          <Link href="/" className="hover:text-black transition-colors duration-200">
             Explore
-          </a>
-          <a href="#" className="hover:text-black transition-colors duration-200">
+          </Link>
+          <Link href="/" className="hover:text-black transition-colors duration-200">
             Shop
-          </a>
-          <a href="#" className="hover:text-black transition-colors duration-200">
+          </Link>
+          <Link href="/" className="hover:text-black transition-colors duration-200">
             Support
-          </a>
+          </Link>
         </div>
       </div>
 
@@ -222,15 +223,15 @@ export default function Navbar() {
       {/* Mobile Dropdown Menu */}
       {menuOpen && (
         <div className="absolute top-20 left-0 w-full bg-white shadow-lg z-50 flex flex-col items-center py-6 space-y-6 md:hidden">
-          <a href="/" className="text-gray-700 text-lg font-semibold hover:text-blue-600 transition-colors">
+          <Link href="/" className="text-gray-700 text-lg font-semibold hover:text-blue-600 transition-colors">
             Explore
-          </a>
-          <a href="/" className="text-gray-700 text-lg font-semibold hover:text-blue-600 transition-colors">
+          </Link>
+          <Link href="/" className="text-gray-700 text-lg font-semibold hover:text-blue-600 transition-colors">
             Shop
-          </a>
-          <a href="/" className="text-gray-700 text-lg font-semibold hover:text-blue-600 transition-colors">
+          </Link>
+          <Link href="/" className="text-gray-700 text-lg font-semibold hover:text-blue-600 transition-colors">
             Support
-          </a>
+          </Link>
 
           <div className="flex items-center w-72 border-2 border-gray-200 rounded-full px-4 py-2 hover:border-blue-500 transition-colors duration-200">
             <input
