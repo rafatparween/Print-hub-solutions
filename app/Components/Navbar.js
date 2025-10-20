@@ -170,7 +170,7 @@ export default function Navbar() {
       {/* Left - Logo & Navigation */}
       <div className="flex items-center space-x-8">
         <Image
-          src="/hpslogo.png"
+          src="/hprlogo.png"
           alt="HP Logo"
           width={80}
           height={80}
