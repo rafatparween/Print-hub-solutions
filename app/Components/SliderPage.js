@@ -290,41 +290,42 @@
 // }
 
 
-
-
-"use client"
+"use client";
 import Image from "next/image";
-import { useRouter } from 'next/navigation'; 
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
+import JivoChat from "../JivoChat";
 
 export default function Troubleshoot() {
-  const router = useRouter(); 
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     setIsVisible(true);
   }, []);
 
+  // ✅ Function to open chat on button click
   const handleSetupClick = () => {
-    // router.push('../service/Pages'); // Ensure the path is correct
+    openLiveChat();
   };
 
   return (
     <div className="bg-white min-h-[500px] flex flex-col items-center justify-center px-4 py-16 relative overflow-hidden">
+      {/* Load JivoChat script */}
+      <JivoChat />
+
       {/* Premium Background Elements */}
       <div className="absolute top-10 left-10 w-80 h-80 bg-blue-50 rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-float"></div>
       <div className="absolute bottom-10 right-10 w-96 h-96 bg-cyan-50 rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-float-delayed"></div>
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-indigo-50 rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-pulse-slow"></div>
 
       <div className="flex flex-col lg:flex-row items-center justify-center max-w-7xl w-full relative z-10 gap-12 lg:gap-20">
-        {/* Left: Enhanced Devices Section */}
-        <div className={`flex flex-col items-center gap-8 lg:w-1/2 transform transition-all duration-1000 ${
-          isVisible ? 'translate-x-0 opacity-100' : '-translate-x-20 opacity-0'
-        }`}>
+        {/* Left Section */}
+        <div
+          className={`flex flex-col items-center gap-8 lg:w-1/2 transform transition-all duration-1000 ${
+            isVisible ? "translate-x-0 opacity-100" : "-translate-x-20 opacity-0"
+          }`}
+        >
           <div className="relative group">
-            {/* Glow Effect */}
             <div className="absolute -inset-6 bg-gradient-to-r from-blue-200 to-cyan-200 rounded-3xl blur-xl opacity-70 group-hover:opacity-100 transition-all duration-500 group-hover:scale-105"></div>
-            {/* Image Container */}
             <div className="relative bg-gradient-to-br from-white to-gray-50 rounded-2xl p-8 shadow-2xl border border-gray-100 transform transition-all duration-500 group-hover:scale-105 group-hover:shadow-3xl">
               <Image
                 src="/dignose.webp"
@@ -335,15 +336,25 @@ export default function Troubleshoot() {
               />
             </div>
           </div>
-          
-          {/* Enhanced Button */}
-          <button 
+
+          {/* Button */}
+          <button
             className="relative bg-gradient-to-r from-[#007DBD] via-blue-600 to-cyan-600 text-white py-4 px-12 rounded-2xl text-lg font-bold hover:from-cyan-600 hover:via-blue-600 hover:to-[#007DBD] transition-all duration-500 transform hover:scale-105 hover:shadow-2xl shadow-lg group w-full sm:w-auto overflow-hidden border border-blue-300/30"
             onClick={handleSetupClick}
           >
             <span className="relative z-10 flex items-center justify-center gap-3 tracking-wide">
-              <svg className="w-6 h-6 transform group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              <svg
+                className="w-6 h-6 transform group-hover:scale-110 transition-transform duration-300"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                />
               </svg>
               Click Here For Printer Setup
             </span>
@@ -351,17 +362,16 @@ export default function Troubleshoot() {
           </button>
         </div>
 
-        {/* Right: Enhanced Text Section */}
-        <div className={`lg:w-1/2 text-center lg:text-left transform transition-all duration-1000 delay-300 ${
-          isVisible ? 'translate-x-0 opacity-100' : 'translate-x-20 opacity-0'
-        }`}>
-          {/* Main Heading */}
+        {/* Right Section */}
+        <div
+          className={`lg:w-1/2 text-center lg:text-left transform transition-all duration-1000 delay-300 ${
+            isVisible ? "translate-x-0 opacity-100" : "translate-x-20 opacity-0"
+          }`}
+        >
           <div className="mb-8">
             <p className="text-4xl lg:text-5xl font-black text-gray-900 mb-4 tracking-tight leading-tight">
               Diagnose and solve
             </p>
-            
-            {/* Subheading with Icon */}
             <div className="flex items-center justify-center lg:justify-start gap-4 mb-6">
               <div className="flex items-center gap-3 bg-gradient-to-r from-blue-50 to-cyan-50 px-4 py-3 rounded-2xl border border-blue-100">
                 <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse shadow-lg shadow-green-200"></div>
@@ -372,7 +382,6 @@ export default function Troubleshoot() {
             </div>
           </div>
 
-          {/* Enhanced Paragraphs */}
           <div className="space-y-6">
             <div className="bg-gradient-to-br from-white to-blue-50/50 p-6 rounded-2xl border border-blue-100 shadow-lg backdrop-blur-sm">
               <p className="text-xl lg:text-2xl text-gray-700 leading-relaxed font-medium">
@@ -382,19 +391,22 @@ export default function Troubleshoot() {
 
             <div className="bg-gradient-to-br from-white to-cyan-50/50 p-6 rounded-2xl border border-cyan-100 shadow-lg backdrop-blur-sm">
               <p className="text-xl lg:text-2xl text-gray-700 leading-relaxed font-medium">
-                Click Here For <span className="font-black text-blue-600 bg-blue-50 px-2 py-1 rounded-lg">Printer</span>  <span className="font-black text-cyan-600 bg-cyan-50 px-2 py-1 rounded-lg">Setup</span> 
-                <br className="hidden lg:block"/>
+                Click Here For{" "}
+                <span className="font-black text-blue-600 bg-blue-50 px-2 py-1 rounded-lg">
+                  Printer
+                </span>{" "}
+                <span className="font-black text-cyan-600 bg-cyan-50 px-2 py-1 rounded-lg">
+                  Setup
+                </span>
+                <br className="hidden lg:block" />
                 Then start a live chat with a support agent.
               </p>
             </div>
           </div>
-
-        
-          
         </div>
       </div>
 
-      {/* Add custom animations */}
+      {/* Animations */}
       <style jsx>{`
         @keyframes float {
           0%, 100% { transform: translateY(0px) rotate(0deg); }
@@ -408,16 +420,10 @@ export default function Troubleshoot() {
           0%, 100% { opacity: 0.4; }
           50% { opacity: 0.6; }
         }
-        .animate-float {
-          animation: float 20s ease-in-out infinite;
-        }
-        .animate-float-delayed {
-          animation: float-delayed 25s ease-in-out infinite;
-        }
-        .animate-pulse-slow {
-          animation: pulse-slow 8s ease-in-out infinite;
-        }
+        .animate-float { animation: float 20s ease-in-out infinite; }
+        .animate-float-delayed { animation: float-delayed 25s ease-in-out infinite; }
+        .animate-pulse-slow { animation: pulse-slow 8s ease-in-out infinite; }
       `}</style>
     </div>
   );
-};
+}
